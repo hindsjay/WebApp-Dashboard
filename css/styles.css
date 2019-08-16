@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+/* to remove default list styles, margin, and padding */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
