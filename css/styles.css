@@ -98,6 +98,13 @@ h1 {
   padding-left: 3px;
 }
 
+.alert {
+  background-color: rgb(133, 132, 138);
+  width: 90%;
+  border: 0;
+  border-radius: 3px;
+}
+
 /* 
 *************** -- Nav Sidebar Styles -- ***************
 */
