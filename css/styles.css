@@ -13,8 +13,13 @@ ul, ol {
   margin: 0;
 }
 
-.main-header {
-  background-color: rgb(143, 127, 231);
+/* 
+*************** -- Header Styles -- ***************
+*/
+
+.header {
+  /* background-color: rgb(143, 127, 231); */
+  background-color: #5D5C61;
   height: 70px;
   display: flex;
   align-items: center;
@@ -52,7 +57,6 @@ h1 {
   height: 30px;
   border-radius: 50%;
   margin: 0 8px 0 10px;
-
 }
 
 .name {
@@ -60,3 +64,54 @@ h1 {
   font-size: .7em;
   margin: 0 15px 0 2px;
 }
+
+/* 
+*************** -- Main-Header Styles -- ***************
+*/
+
+.main-header h2 {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.main-search {
+  text-align: center;
+  height: 50px;
+  background-color: rgb(248, 245, 245);
+}
+
+.main-search input {
+  position: relative;
+  font-size: .8em;
+  top: 22%;
+  width: 80%;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  outline: none;
+  padding-left: 5px;
+}
+
+.main-search input::placeholder {
+  font-size: .7rem;
+  padding-left: 3px;
+}
+
+/* 
+*************** -- Nav Sidebar Styles -- ***************
+*/
+
+.nav-sidebar {
+  display: flex;
+  justify-content: space-around;
+  /* background-color: rgb(109, 97, 180) */
+  background-color: rgb(133, 132, 138);
+}
+
+.sidebar-icons {
+  width: 25px;
+  height: 25px;
+  margin: 10px 0;
+}
+
