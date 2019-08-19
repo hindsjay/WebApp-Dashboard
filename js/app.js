@@ -1,6 +1,7 @@
 
 const lineChart = document.getElementById('line-chart');
 const barChart = document.getElementById('bar-chart');
+const doughnutChart = document.getElementById('doughnut-chart');
 
 const myLineChart = new Chart(lineChart, {
   type: 'line',
@@ -98,6 +99,38 @@ const myBarChart = new Chart(barChart, {
           padding: 15
         }
       }]
+    }
+  }
+});
+
+const myDoughnutChart = new Chart(doughnutChart, {
+  type: 'doughnut',
+  data: {
+    labels: ['Phones', 'Tablets', 'Desktop'],
+    datasets: [{
+      data: [15, 18, 67],
+      backgroundColor: [
+        'rgb(177, 162, 150)',
+        'rgb(85, 122, 149)',
+        'rgb(133, 132, 138)',
+      ]
+    }]
+  },
+  options: {
+    layout: {
+      padding: {
+        left: 0,
+        right: 25,
+        top: 0,
+        bottom: 0
+      }
+    },
+    legend: {
+      position: 'right',
+      labels: {
+        boxWidth: 20,
+        padding: 15
+      }
     }
   }
 });
