@@ -124,19 +124,24 @@ h1 {
 }
 
 /* 
-*************** -- Traffic Section Styles -- ***************
+*************** -- Chart Section Styles -- ***************
 */
 
-.traffic-header {
+.section-header {
   margin-bottom: 20px;
 }
 
-.traffic-header h3 {
+.doughnut-chart .section-header,
+.social-stats .section-header {
+  margin-top: 30px;
+}
+
+.section-header h3 {
   text-transform: uppercase;
   text-align: center;
 }
 
-.traffic-header h3,
+.section-header h3,
 .traffic-nav-link {
   font-size: .8em; 
 }
@@ -145,3 +150,21 @@ h1 {
   display: flex;
   justify-content: space-evenly;
 }
+
+/* 
+*************** -- Social Stats Section Styles -- ***************
+*/
+
+.social-image {
+  background-color: rgb(133, 132, 138);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.twitter-icon,
+.facebook-icon,
+.google-icon {
+  fill: white;
+}
+
