@@ -131,9 +131,12 @@ h1 {
   margin-bottom: 20px;
 }
 
-.doughnut-chart .section-header,
-.social-stats .section-header {
+.doughnut-chart .section-header {
   margin-top: 30px;
+}
+
+.social-stats .section-header {
+  margin: 40px 0 25px;
 }
 
 .section-header h3 {
@@ -155,11 +158,24 @@ h1 {
 *************** -- Social Stats Section Styles -- ***************
 */
 
+
+.stats-container {
+  background-color: rgb(248, 245, 245);
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 4px;
+  width: 90%;
+  padding: 20px 0;
+  margin: 0 auto 25px;
+}
+
 .social-image {
   background-color: rgb(133, 132, 138);
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  margin: 0 20px;
 }
 
 .twitter-icon,
@@ -168,3 +184,17 @@ h1 {
   fill: white;
 }
 
+.stats-title {
+  color: #5D5C61;
+  font-weight: 600;
+  font-size: .8em;
+  letter-spacing: .5px;
+  margin: 0;
+}
+
+.stat-value {
+  font-weight: 300;
+  font-size: 2.5em;
+  color: rgb(95, 93, 93);
+  margin: 0;
+}
