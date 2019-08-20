@@ -52,10 +52,14 @@ h1 {
   border-left: 2px solid rgba(0, 0, 0, .2);
 }
 
-.profile-avatar {
+.profile-avatar,
+.member-image {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+}
+
+.profile-avatar {
   margin: 0 15px 0 10px;
 }
 
@@ -127,6 +131,12 @@ h1 {
 *************** -- Chart Section Styles -- ***************
 */
 
+.chart-container,
+.social-container {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
 .section-header {
   margin-bottom: 20px;
 }
@@ -197,4 +207,57 @@ h1 {
   font-size: 2.5em;
   color: rgb(95, 93, 93);
   margin: 0;
+}
+
+/* 
+*************** -- New Members and Recent Activity Section Styles -- ***************
+*/
+
+.members {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.member-content,
+.activity-content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.member-content:nth-child(-n+3),
+.activity-content:nth-child(-n+3) {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.member--name-activity,
+.member--email-timelog {
+  margin: 0;
+  line-height: 0.5;
+}
+
+.member--name-activity,
+.member-date{
+  font-size: .7em;
+}
+
+.member--email-timelog {
+  font-size: .6em;
+  color: rgb(133, 132, 138);
+}
+
+.member-content-details {
+  margin: 3px auto 0 10px;;
+}
+
+.activity-content .member--name-activity {
+  line-height: 1.2;
+}
+
+/* *****  chevron styles from font-awesome ***** */
+.fa {
+  margin-bottom: 5px;
+  font-size: 24px;
 }
