@@ -15,6 +15,16 @@ ul, ol {
 
 .wrapper {
   margin-bottom: 30px;
+  display: grid;
+  /* grid-template-columns: auto; */
+  grid-template-areas: 
+    "header"
+    "nav"
+    "main";
+}
+
+main {
+  grid-area: main;
 }
 
 /* 
@@ -27,6 +37,7 @@ ul, ol {
   height: 70px;
   display: flex;
   align-items: center;
+  grid-area: header;
 }
 
 h1 {
@@ -129,6 +140,7 @@ h1 {
   justify-content: space-around;
   /* background-color: rgb(109, 97, 180) */
   background-color: rgb(133, 132, 138);
+  grid-area: nav;
 }
 
 .sidebar-icons {
