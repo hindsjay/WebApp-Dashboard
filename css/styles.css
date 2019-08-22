@@ -408,13 +408,14 @@ built switch following guide from this source: https://medium.com/front-end-week
   border-radius: 50%;
   border: 2px solid rgba(0, 0, 0, .2);
   background-color: white;
-  top: 3px;
-  left: 3px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 17%;
   transition: all 0.3s;
 }
 
 .checkbox:checked + .switch::after {
-  left: 47px;
+  left: 56px;
 }
 
 .checkbox:checked + .switch {
@@ -433,7 +434,7 @@ built switch following guide from this source: https://medium.com/front-end-week
   display: none;
   color: white;
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   top: 50%;
   left: 25%;
   font-size: .7em;
