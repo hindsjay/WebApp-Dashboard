@@ -13,6 +13,10 @@ ul, ol {
   margin: 0;
 }
 
+.wrapper {
+  margin-bottom: 30px;
+}
+
 /* 
 *************** -- Header Styles -- ***************
 */
@@ -87,7 +91,8 @@ h1 {
 }
 
 .main-search input,
-.message-search input {
+.message-search input, 
+.timezone {
   font-size: .8em;
   height: 30px;
   border: 1px solid rgba(0, 0, 0, .2);
@@ -233,6 +238,10 @@ h1 {
   align-items: center;
 }
 
+.member-content {
+  flex-wrap: wrap;
+}
+
 .member-content:nth-child(-n+3),
 .activity-content:nth-child(-n+3) {
   border-bottom: 1px solid rgba(0, 0, 0, .1);
@@ -245,7 +254,8 @@ h1 {
 }
 
 .member--name-activity,
-.member-date{
+.member-date, 
+.button-title {
   font-size: .7em;
 }
 
@@ -269,16 +279,22 @@ h1 {
 }
 
 /* 
-*************** -- Message User Section Styles -- ***************
+*************** -- Message User and Settings Section Styles -- ***************
 */
 
 .message-search input,
-.message-text {
+.message-text,
+.timezone {
   background-color: rgb(248, 245, 245);
-  width: 85%;
   display: block;
   margin: 0 auto;
 }
+
+.message-search input,
+.message-text {
+  width: 85%;
+}
+
 
 .message-search input::placeholder,
 .message-text::placeholder {
@@ -302,10 +318,9 @@ h1 {
   margin-top: 15px;
 }
 
-.message-button {
-  display: block;
-  width: 85%;
-  margin: 15px auto 0;
+.message-button,
+.save-button,
+.cancel-button {
   padding: 15px;
   background-color: rgb(133, 132, 138);
   border-radius: 5px;
@@ -317,7 +332,110 @@ h1 {
   color: white;
 }
 
-.message-button:hover {
+.message-button {
+  display: block;
+  width: 85%;
+  margin: 15px auto 0;
+}
+
+.message-button:hover,
+.save-button:hover,
+.cancel-button:hover {
   cursor: pointer;
 }
 
+.message {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.settings {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.toggle-buttons-container {
+  display: flex;
+  align-items: center;
+  max-width: 220px;
+  margin-bottom: 15px;
+}
+
+.button-title {
+  margin-right: auto;
+}
+
+.timezone {
+  opacity: .5;
+  font-size: .7em;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.settings-button {
+  margin: 15px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.save-button,
+.cancel-button {
+  flex-basis: 47%;
+}
+
+/* 
+*****  styling for toggle switch *****
+built switch following guide from this source: https://medium.com/front-end-weekly/creating-a-toggle-switch-in-css-2d23e496d035 
+**************************************
+*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 25px;
+  background-color: rgb(182, 178, 178);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, .2);
+  background-color: white;
+  top: 3px;
+  left: 3px;
+  transition: all 0.3s;
+}
+
+.checkbox:checked + .switch::after {
+  left: 47px;
+}
+
+.checkbox:checked + .switch {
+  background-color: rgb(85, 122, 149);
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked + .switch .on {
+  display: block;
+}
+
+.on {
+  display: none;
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 25%;
+  font-size: .7em;
+  font-weight: 600;
+}
