@@ -291,7 +291,9 @@ h1 {
 }
 
 .message-search input,
-.message-text {
+.message-text,
+.message-button,
+.settings {
   width: 85%;
 }
 
@@ -334,7 +336,6 @@ h1 {
 
 .message-button {
   display: block;
-  width: 85%;
   margin: 15px auto 0;
 }
 
@@ -350,7 +351,6 @@ h1 {
 }
 
 .settings {
-  width: 85%;
   margin: 0 auto;
 }
 
@@ -372,7 +372,7 @@ h1 {
   margin-top: 30px;
 }
 
-.settings-button {
+.settings-buttons {
   margin: 15px auto 0;
   display: flex;
   flex-wrap: wrap;
