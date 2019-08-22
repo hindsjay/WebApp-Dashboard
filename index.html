@@ -82,7 +82,7 @@
         <div class="social-container">
           <div class="stats-container">
             <div class="social-image">
-              <svg version="1.1" id="Layer_1" viewBox="-20 -22 70 70" xmlns="http://www.w3.org/2000/svg">
+              <svg version="1.1" viewBox="-20 -22 70 70" xmlns="http://www.w3.org/2000/svg">
                 <path class="twitter-icon" fill="red" d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
                 c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
                 c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
@@ -97,7 +97,7 @@
           </div>
           <div class="stats-container">
             <div class="social-image">
-              <svg id="Layer_1" viewBox="-20 -18 100 100" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="-20 -18 100 100" xmlns="http://www.w3.org/2000/svg">
                 <path class="facebook-icon" fill="green" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/>
               </svg>
             </div>
@@ -108,7 +108,7 @@
           </div>
           <div class="stats-container">
             <div class="social-image">
-              <svg id="Layer_1" viewBox="-23 -22 75 75" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="-23 -22 75 75" xmlns="http://www.w3.org/2000/svg">
                 <path class="google-icon" fill="blue" d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
                 c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
                 c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
@@ -227,6 +227,41 @@
           <textarea name="user_message" placeholder="Message for User" class="message-text" id="user-message"></textarea>
           <button type="submit" class="message-button" id="send-button">Send</button>
         </form>
+      </section>
+
+      <!-- settings section -->
+      <section class="settings">
+        <div class="section-header">
+          <h3>Settings</h3>
+        </div>
+        <div class="toggle-buttons-container">
+          <p class="button-title">Send Email Notifications</p>
+          <input type="checkbox" id="toggle-email" class="checkbox">
+          <label for="toggle-email" class="switch"><span class="on">ON</span></label>
+        </div>
+        <div class="toggle-buttons-container">
+          <p class="button-title">Set Profile to Public</p>
+          <input type="checkbox" id="toggle-profile" class="checkbox">
+          <label for="toggle-profile" class="switch"><span class="on">ON</span></label>
+        </div>
+        <div>
+          <select id="timezone" class="timezone">
+            <option disabled selected>Select Timezone</option>
+            <option value="atlantic">Atlantic Standard Time (AST)</option>
+            <option value="eastern">Eastern Standard Time (EST)</option>
+            <option value="central">Central Standard Time (CST)</option>
+            <option value="mountain">Mountain Standard Time (MST)</option>
+            <option value="pacific">Pacific Standard Time (PST)</option>
+            <option value="alaskan">Alaskan Standard Time (AKST)</option>
+            <option value="hawaii-aleutian">Hawaii-Aleutian Standard Time (HST)</option>
+            <option value="samoa">Samoa Standard Time (UTC-11)</option>
+            <option value="chamorro">Chamorro Standard Time (UTC+10)</option>
+          </select>
+        </div>
+        <div class="settings-button">
+          <button type="submit" class="save-button" id="save-button">Save</button>
+          <button type="submit" class="cancel-button" id="cancel-button">Cancel</button>
+        </div>
       </section>
 
     </main>
