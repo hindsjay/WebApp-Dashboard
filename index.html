@@ -13,7 +13,10 @@
   <div class="wrapper">
     <header class="header">
       <h1>my<span class="font-light">App</span><span class="trademark">&trade;</span></h1>
-      <img src="icons/icon-bell.svg" class="icon-bell" alt="bell icon">
+      <div class="bell-icon-container">
+          <img src="icons/icon-bell.svg" class="icon-bell" alt="bell icon">
+          <p class="bell-notification-signal"></p>
+      </div>
       <div class="profile">
         <img src="images/member-1.jpg" class="profile-avatar" alt="profile avatar">
       </div>
@@ -21,15 +24,15 @@
     </header>
 
     <nav class="nav-sidebar">
-      <a><img src="icons/icon-dashboard.svg" class="sidebar-icons" alt="dashboard icon"></a>
-      <a><img src="icons/icon-members.svg" class="sidebar-icons" alt="members icon"></a>
-      <a><img src="icons/icon-visits.svg" class="sidebar-icons" alt="visits icon"></a>
-      <a><img src="icons/icon-settings.svg" class="sidebar-icons" alt="settings icon"></a>
+      <a class="sidebar-link" id="sidebar-link" href="#dashboard"><img src="icons/icon-dashboard.svg" class="sidebar-icons" alt="dashboard icon"></a>
+      <a class="sidebar-link" id="sidebar-link" href="#members"><img src="icons/icon-members.svg" class="sidebar-icons" alt="members icon"></a>
+      <a class="sidebar-link" id="sidebar-link" href="#visits"><img src="icons/icon-visits.svg" class="sidebar-icons" alt="visits icon"></a>
+      <a class="sidebar-link" id="sidebar-link" href="#settings"><img src="icons/icon-settings.svg" class="sidebar-icons" alt="settings icon"></a>
     </nav>
 
     <main>
       <section class="main-header">
-        <h2>Dashboard</h2>
+        <h2 id="dashboard">Dashboard</h2>
         <div class="main-search">
           <input type="search" placeholder="Search">
         </div>
@@ -74,7 +77,7 @@
       </section>
 
       <!-- social stats section -->
-      <section class="social-stats">
+      <section class="social-stats" id="visits">
         <div class="section-header">
           <h3>Social Stats</h3>
         </div>
@@ -135,7 +138,7 @@
       </section>
 
       <!-- new members section -->
-      <section class="members">
+      <section class="members" id="members">
         <div class="section-header">
           <h3>New Members</h3>
         </div>
@@ -229,7 +232,7 @@
       </section>
 
       <!-- settings section -->
-      <section class="settings">
+      <section class="settings" id="settings">
         <div class="section-header">
           <h3>Settings</h3>
         </div>
