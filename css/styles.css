@@ -125,20 +125,27 @@ h1 {
   padding-left: 3px;
 }
 
-.alert-banner {
-  background-color: rgb(133, 132, 138);
+#alert {
   width: 95%;
-  border-radius: 3px;
-  color: white;
   margin: 0 auto;
-  font-size: .7em;
-  height: 32px;
-  display: none;
 }
 
-.alert-banner-content {
-  padding: 10px;
-  margin: 0;
+.alert-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(133, 132, 138);
+  border-radius: 3px;
+  color: white;
+  font-size: .7em;
+  padding: 0 15px;
+}
+
+.alert-banner-close {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0 0 3px;
+  cursor: pointer;
 }
 
 /* 
@@ -351,7 +358,7 @@ h1 {
 
 .message-button {
   display: block;
-  margin: 15px auto 0;
+  margin: 17px auto 0;
 }
 
 .message-button:hover,
