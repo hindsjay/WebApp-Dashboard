@@ -59,7 +59,22 @@ h1 {
 .icon-bell {
   width: 20px;
   height: 20px;
-  margin-right: 10px;
+  margin: 3px 20px 0 0;
+}
+
+.bell-icon-container {
+  position: relative;
+}
+
+.bell-notification-signal {
+  background-color: rgb(107, 228, 107);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin: 0;
+  position: absolute;
+  bottom: 80%;
+  left: 17px;
 }
 
 .profile {
@@ -158,12 +173,22 @@ h1 {
   /* background-color: rgb(109, 97, 180) */
   background-color: rgb(133, 132, 138);
   grid-area: nav;
+  align-items: center;
+}
+
+.nav-sidebar a {
+  padding: 8px;
 }
 
 .sidebar-icons {
+  display: block;
   width: 25px;
   height: 25px;
-  margin: 10px 0;
+  margin: 0 auto;
+}
+
+.sidebar-link {
+  opacity: .6;
 }
 
 /* 
@@ -197,6 +222,7 @@ h1 {
 .traffic-nav {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 /* 
@@ -296,7 +322,10 @@ h1 {
   line-height: 1.2;
 }
 
-/* *****  chevron styles from font-awesome ***** */
+/* 
+*****  chevron styles from font-awesome --> https://www.w3schools.com/icons/fontawesome_icons_directional.asp ***** 
+*/
+
 .fa {
   margin-bottom: 5px;
   font-size: 24px;
@@ -464,6 +493,25 @@ built switch following guide from this source: https://medium.com/front-end-week
 }
 
 /* 
+*************** -- Styles for "active" data -- ***************
+*/
+
+.traffic-timeframe-active {
+  color: white;
+  background-color: rgb(177, 162, 150);
+  border-radius: 40px;
+  padding: 5px 12px;
+}
+
+.nav-sidebar-active {
+  opacity: 1;
+  border-top: 3px solid rgb(133, 132, 138);
+  border-right: 3px solid rgb(133, 132, 138);
+  border-bottom: 3px solid rgb(107, 228, 107);
+  border-left: 3px solid rgb(133, 132, 138);
+}
+
+/* 
 *************** -- Media Queries -- ***************
 */
 
@@ -483,12 +531,17 @@ built switch following guide from this source: https://medium.com/front-end-week
   .nav-sidebar {
     flex-direction: column;
     justify-content: unset;
-    align-items: center;
   }
 
   .nav-sidebar a {
+    width: 100%;
     padding: 10px;
     cursor: pointer;
+  }
+
+  .sidebar-icons {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .main-header {
@@ -583,5 +636,13 @@ built switch following guide from this source: https://medium.com/front-end-week
   .members,
   .message {
     border-right: 1px solid rgba(0, 0, 0, .1);
+  }
+
+  .nav-sidebar-active {
+    opacity: 1;
+    border-top: 3px solid rgb(133, 132, 138);
+    border-right: 3px solid rgb(133, 132, 138);
+    border-bottom: 3px solid rgb(133, 132, 138);
+    border-left: 3px solid rgb(107, 228, 107);
   }
 }
