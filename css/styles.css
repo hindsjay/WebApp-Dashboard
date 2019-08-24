@@ -14,9 +14,8 @@ ul, ol {
 }
 
 .wrapper {
-  margin-bottom: 30px;
   display: grid;
-  /* grid-template-columns: auto; */
+  grid-template-rows: 70px 48px 1fr;
   grid-template-areas: 
     "header"
     "nav"
@@ -24,6 +23,7 @@ ul, ol {
 }
 
 main {
+  display: grid;
   grid-area: main;
 }
 
@@ -34,7 +34,6 @@ main {
 .header {
   /* background-color: rgb(143, 127, 231); */
   background-color: #5D5C61;
-  height: 70px;
   display: flex;
   align-items: center;
   grid-area: header;
@@ -99,6 +98,7 @@ h1 {
   text-align: center;
   height: 50px;
   background-color: rgb(248, 245, 245);
+  margin-bottom: 15px;
 }
 
 .main-search input,
@@ -114,6 +114,7 @@ h1 {
 
 .main-search input {
   width: 80%;
+  max-width: 333px;
   position: relative;
   top: 22%;
   opacity: .7;
@@ -124,11 +125,20 @@ h1 {
   padding-left: 3px;
 }
 
-.alert {
+.alert-banner {
   background-color: rgb(133, 132, 138);
-  width: 90%;
-  border: 0;
+  width: 95%;
   border-radius: 3px;
+  color: white;
+  margin: 0 auto;
+  font-size: .7em;
+  height: 32px;
+  display: none;
+}
+
+.alert-banner-content {
+  padding: 10px;
+  margin: 0;
 }
 
 /* 
@@ -159,16 +169,12 @@ h1 {
   border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
+.traffic-line-graph .section-header h3 {
+  margin: 0 0 20px;
+}
+
 .section-header {
-  margin-bottom: 20px;
-}
-
-.doughnut-chart .section-header {
-  margin-top: 30px;
-}
-
-.social-stats .section-header {
-  margin: 40px 0 25px;
+  margin: 30px 0;
 }
 
 .section-header h3 {
@@ -189,7 +195,6 @@ h1 {
 /* 
 *************** -- Social Stats Section Styles -- ***************
 */
-
 
 .stats-container {
   background-color: rgb(248, 245, 245);
@@ -304,11 +309,9 @@ h1 {
 
 .message-search input,
 .message-text,
-.message-button,
-.settings {
-  width: 85%;
+.message-button {
+  width: 100%;
 }
-
 
 .message-search input::placeholder,
 .message-text::placeholder {
@@ -358,12 +361,12 @@ h1 {
 }
 
 .message {
-  padding-bottom: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
+.message,
 .settings {
-  margin: 0 auto;
+  padding: 0 20px 30px;
 }
 
 .toggle-buttons-container {
@@ -381,7 +384,7 @@ h1 {
   opacity: .5;
   font-size: .7em;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 33px;
 }
 
 .settings-buttons {
@@ -451,4 +454,127 @@ built switch following guide from this source: https://medium.com/front-end-week
   left: 25%;
   font-size: .7em;
   font-weight: 600;
+}
+
+/* 
+*************** -- Media Queries -- ***************
+*/
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 70px 1fr;
+    grid-template-areas: 
+    "header header"
+    "nav main";
+  }
+
+  .name {
+    display: block;
+  }
+  
+  .nav-sidebar {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+  }
+
+  .nav-sidebar a {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .main-header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main-header h2 {
+    flex-basis: 20%;
+  }
+
+  .main-search {
+    flex-basis: 80%;
+    text-align: right;
+    border-left: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+  }
+
+  .main-search input {
+    margin-right: 3%;
+    top: 21%
+  }
+
+  .traffic-line-graph .section-header,
+  .traffic-bar-graph .section-header,
+  .doughnut-chart .section-header,
+  .social-stats .section-header,
+  .members .section-header,
+  .activity .section-header {
+    padding-left: 20px;
+  }
+
+  .section-header h3 {
+    text-align: unset;
+  }
+
+  .traffic-line-graph .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 18px;
+  }
+
+  .traffic-line-graph .section-header h3 {
+    margin: 0;
+  }
+
+  .traffic-nav {
+    flex-basis: 40%;
+    justify-content: space-between;
+    max-width: 265px;
+  }
+
+  .social-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  .stats-container {
+    flex-basis: 260px;
+  }
+
+  main {
+    grid-template-columns: 50%;
+  }
+
+  .main-header,
+  .traffic-line-graph,
+  .social-stats {
+    grid-column: 1 / span 2;
+  }
+
+  .traffic-bar-graph,
+  .members,
+  .message {
+    grid-column: 1 / span 1;
+  }
+
+  .doughnut-chart,
+  .activity,
+  .settings {
+    grid-column: 2 / span 1;
+  }
+
+  main section:nth-child(8) {
+    border-bottom: none;
+  }
+
+  .traffic-bar-graph,
+  .members,
+  .message {
+    border-right: 1px solid rgba(0, 0, 0, .1);
+  }
 }
