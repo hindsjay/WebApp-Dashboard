@@ -27,6 +27,9 @@ const myLineChart = new Chart(lineChart, {
         bottom: 0
       }
     },
+    animation: {
+      duration: 0
+    },
     legend: {
       display: false
     },
@@ -78,6 +81,9 @@ const myBarChart = new Chart(barChart, {
         bottom: 0
       }
     },
+    animation: {
+      duration: 0
+    },
     legend: {
       display: false
     },
@@ -124,6 +130,9 @@ const myDoughnutChart = new Chart(doughnutChart, {
         top: 0,
         bottom: 0
       }
+    },
+    animation: {
+      duration: 0
     },
     legend: {
       position: 'right',
