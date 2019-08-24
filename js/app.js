@@ -1,7 +1,7 @@
-
 const lineChart = document.getElementById('line-chart');
 const barChart = document.getElementById('bar-chart');
 const doughnutChart = document.getElementById('doughnut-chart');
+const alert = document.getElementById('alert');
 
 const myLineChart = new Chart(lineChart, {
   type: 'line',
@@ -144,3 +144,17 @@ const myDoughnutChart = new Chart(doughnutChart, {
   }
 });
 
+
+alert.innerHTML = `
+  <div class="alert-banner">
+    <p><strong>Alert:</strong> &nbsp; You have <strong>6</strong> overdue tasks to complete!</p>
+    <p class="alert-banner-close">x</p>
+  </div>
+`;
+
+alert.addEventListener('click', (event) => {
+  const element = event.target;
+  if (element.classList.contains('alert-banner-close')) {
+    alert.style.display = 'none';
+  }
+});
