@@ -60,6 +60,13 @@ h1 {
   width: 20px;
   height: 20px;
   margin: 3px 20px 0 0;
+  transition: transform .2s;
+  transform-origin: 50% 0%;
+  cursor: pointer;
+}
+
+.icon-bell:hover {
+  transform: rotate(25deg);
 }
 
 .bell-icon-container {
