@@ -84,6 +84,36 @@ h1 {
   left: 17px;
 }
 
+.bell-dropdown-container {
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 200px;
+  z-index: 1;
+  font-size: .7em;
+  right: 30px;
+  box-shadow: 1px 2px 8px 8px rgba(0, 0, 0, .2);
+  display: none;
+}
+
+.bell-dropdown-content {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.dropdown-message {
+  margin-right: auto;
+}
+
+.dropdown-close {
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.bell-dropdown-container .bell-dropdown-content:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
 .profile {
   border-left: 2px solid rgba(0, 0, 0, .2);
 }
