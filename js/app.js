@@ -2,6 +2,11 @@ const lineChart = document.getElementById('line-chart');
 const barChart = document.getElementById('bar-chart');
 const doughnutChart = document.getElementById('doughnut-chart');
 const alert = document.getElementById('alert');
+const bellIcon = document.getElementById('icon-bell');
+const dropdownContainer = document.querySelector('.bell-dropdown-container');
+const bellNotification = document.querySelector('.bell-notification-signal');
+// const dropdownClose = document.querySelectorAll('.dropdown-close');
+let counter = 0;
 
 const myLineChart = new Chart(lineChart, {
   type: 'line',
@@ -156,6 +161,27 @@ alert.addEventListener('click', (event) => {
   const element = event.target;
   if (element.classList.contains('alert-banner-close')) {
     alert.style.display = 'none';
+  }
+});
+
+bellIcon.addEventListener('click', () => {
+  if (dropdownContainer.style.display === '') {
+    dropdownContainer.style.display = 'block'
+  } else {
+    dropdownContainer.style.display = '';
+  }
+});
+
+dropdownContainer.addEventListener('click', function(event) {
+  const element = event.target;
+  const eventTargetPreviousElement = element.previousElementSibling;
+
+  eventTargetPreviousElement.parentElement.style.display = 'none';
+  counter++;
+
+  if (counter === 2) {
+    dropdownContainer.style.boxShadow = 'none';
+    bellNotification.style.display = 'none';
   }
 });
 
