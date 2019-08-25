@@ -158,3 +158,17 @@ alert.addEventListener('click', (event) => {
     alert.style.display = 'none';
   }
 });
+
+const members = [
+  'Josh Sullivan',
+  'Victoria Chambers',
+  'Dale Byrd',
+  'Jenny Wong',
+  'Kevin John',
+  'Sarah Brown',
+  'Rich Dorn',
+  'Greg Neal',
+  'Laura Howard',
+  'Stephanie Waters'
+];
+
