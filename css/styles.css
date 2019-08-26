@@ -262,6 +262,16 @@ h1 {
   align-items: center;
 }
 
+.traffic-nav-link {
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.widget-container-full,
+.widget-container-half {
+  width: 100vw;
+}
+
 /* 
 *************** -- Social Stats Section Styles -- ***************
 */
@@ -537,7 +547,6 @@ built switch following guide from this source: https://medium.com/front-end-week
   color: white;
   background-color: rgb(177, 162, 150);
   border-radius: 40px;
-  padding: 5px 12px;
 }
 
 .nav-sidebar-active {
@@ -559,6 +568,14 @@ built switch following guide from this source: https://medium.com/front-end-week
     grid-template-areas: 
     "header header"
     "nav main";
+  }
+
+  .widget-container-full {
+    width: 90vw;
+  }
+
+  .widget-container-half {
+    width: 45vw;
   }
 
   .name {
