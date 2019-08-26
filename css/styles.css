@@ -27,6 +27,11 @@ main {
   grid-area: main;
 }
 
+section:nth-child(n+2):nth-child(-n+7),
+section:nth-child(-n+8) {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
 /* 
 *************** -- Header Styles -- ***************
 */
@@ -235,7 +240,6 @@ h1 {
 .chart-container,
 .social-container {
   padding-bottom: 30px;
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .traffic-line-graph .section-header h3 {
@@ -323,7 +327,6 @@ h1 {
 .members,
 .activity {
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .member-content,
@@ -441,10 +444,6 @@ h1 {
 .save-button:hover,
 .cancel-button:hover {
   cursor: pointer;
-}
-
-.message {
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .message,
@@ -570,6 +569,10 @@ built switch following guide from this source: https://medium.com/front-end-week
     "nav main";
   }
 
+  section:nth-child(-n+8) {
+    border-bottom: none;
+  }
+
   .widget-container-full {
     width: 90vw;
   }
@@ -680,10 +683,6 @@ built switch following guide from this source: https://medium.com/front-end-week
   .activity,
   .settings {
     grid-column: 2 / span 1;
-  }
-
-  main section:nth-child(8) {
-    border-bottom: none;
   }
 
   .traffic-bar-graph,
