@@ -3,10 +3,29 @@ const barChart = document.getElementById('bar-chart');
 const doughnutChart = document.getElementById('doughnut-chart');
 const alert = document.getElementById('alert');
 const bellIcon = document.getElementById('icon-bell');
+const bellIconContainer = document.querySelector('.bell-icon-container');
 const dropdownContainer = document.querySelector('.bell-dropdown-container');
 const bellNotification = document.querySelector('.bell-notification-signal');
-// const dropdownClose = document.querySelectorAll('.dropdown-close');
+const trafficNav = document.querySelector('.traffic-nav');
+const trafficNavLinks = document.querySelectorAll('.traffic-nav-link');
 let counter = 0;
+
+const lineChartData = {
+  Hourly: [990, 430, 312, 809, 272, 1009, 765, 1223, 1189, 800, 1559],
+  Daily: [750, 1233, 958, 1609, 2110, 1467, 1755, 1190, 1923, 2290, 1990],
+  Weekly: [1009, 2009, 1309, 1190, 2120, 1290, 1671, 1409, 1801, 1789, 801],
+  Monthly: [1771, 1567, 1239, 1667, 1770, 2188, 2377, 1883, 1577, 1501, 1962]
+}
+
+const chartDataset = [{
+  backgroundColor: ['rgba(133, 132, 138, .3)'],
+  borderColor: ['rgba(133, 132, 138, 1)'],
+  borderWidth: 1,
+  lineTension: 0,
+  pointRadius: 5,
+  pointBorderColor: 'rgba(133, 132, 138, 1)',
+  pointBackgroundColor: 'rgb(255, 255, 255)'
+}];
 
 const myLineChart = new Chart(lineChart, {
   type: 'line',
@@ -150,6 +169,31 @@ const myDoughnutChart = new Chart(doughnutChart, {
 });
 
 
+// event listener for line graph timeframe links
+trafficNav.addEventListener('click', (event) => {
+  trafficNavLinks.forEach( (element) => {
+    if (element.classList.contains('traffic-timeframe-active') && event.target.classList.contains('traffic-nav-link')) {
+      element.classList.remove('traffic-timeframe-active');
+    }
+    
+    if (event.target.innerHTML === element.innerHTML) {
+      element.classList.add('traffic-timeframe-active');
+      chartDataset[0].data = lineChartData[element.innerHTML];
+
+      lineChartRender(myLineChart, chartDataset[0]);
+    }
+  });
+});
+
+
+// to update the chart after new data is passed in
+function lineChartRender(chart, data) {
+  chart.data.datasets.pop();
+  chart.data.datasets.push(data);
+  chart.update();
+};
+
+
 alert.innerHTML = `
   <div class="alert-banner">
     <p><strong>Alert:</strong> &nbsp; You have <strong>6</strong> overdue tasks to complete!</p>
@@ -164,26 +208,53 @@ alert.addEventListener('click', (event) => {
   }
 });
 
-bellIcon.addEventListener('click', () => {
-  if (dropdownContainer.style.display === '') {
-    dropdownContainer.style.display = 'block'
-  } else {
-    dropdownContainer.style.display = '';
+// bellIcon.addEventListener('click', () => {
+//   if (dropdownContainer.style.display === '') {
+//     dropdownContainer.style.display = 'block'
+//   } else {
+//     dropdownContainer.style.display = '';
+//   }
+// });
+
+// dropdownContainer.addEventListener('click', function(event) {
+//   const element = event.target;
+//   const eventTargetPreviousElement = element.previousElementSibling;
+
+//   eventTargetPreviousElement.parentElement.style.display = 'none';
+//   counter++;
+
+//   if (counter === 2) {
+//     dropdownContainer.style.boxShadow = 'none';
+//     bellNotification.style.display = 'none';
+//   }
+// });
+
+/*
+event listener on bell icon container to handle dropdown menu and removal of dropdown menu notification
+when "x" is clicked
+*/ 
+bellIconContainer.addEventListener('click', (event) => {
+  const elementClicked = event.target;
+  if (elementClicked === bellIcon) {
+    if (dropdownContainer.style.display === '') {
+      dropdownContainer.style.display = 'block'
+    } else {
+      dropdownContainer.style.display = '';
+    }
+  }
+
+  if (elementClicked.classList.contains('dropdown-close')) {
+    const eventTargetPreviousElement = elementClicked.previousElementSibling;
+    eventTargetPreviousElement.parentElement.style.display = 'none';
+    counter++;
+  
+    if (counter === 2) {
+      dropdownContainer.style.boxShadow = 'none';
+      bellNotification.style.display = 'none';
+    }
   }
 });
 
-dropdownContainer.addEventListener('click', function(event) {
-  const element = event.target;
-  const eventTargetPreviousElement = element.previousElementSibling;
-
-  eventTargetPreviousElement.parentElement.style.display = 'none';
-  counter++;
-
-  if (counter === 2) {
-    dropdownContainer.style.boxShadow = 'none';
-    bellNotification.style.display = 'none';
-  }
-});
 
 const members = [
   'Josh Sullivan',
