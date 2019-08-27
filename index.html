@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="autocomplete-master/jquery.autocomplete.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -235,7 +236,7 @@
           <h3>Message User</h3>
         </div>
         <form action="index.html" method="post" class="message-search">
-          <input type="search" placeholder="Search for User" name="user_name">
+          <input type="search" placeholder="Search for User" name="user_name" id="search-user">
           <textarea name="user_message" placeholder="Message for User" class="message-text" id="user-message"></textarea>
           <button type="submit" class="message-button" id="send-button">Send</button>
         </form>
@@ -280,6 +281,8 @@
   </div>  <!-- wrapper -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="autocomplete-master/jquery.autocomplete.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
