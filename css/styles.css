@@ -556,6 +556,10 @@ built switch following guide from this source: https://medium.com/front-end-week
   border-left: 3px solid rgb(133, 132, 138);
 }
 
+.xdsoft_autocomplete_dropdown {
+  font-size: .7em;
+}
+
 /* 
 *************** -- Media Queries -- ***************
 */
