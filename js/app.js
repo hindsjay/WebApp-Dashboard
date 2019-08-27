@@ -169,6 +169,14 @@ const myDoughnutChart = new Chart(doughnutChart, {
 });
 
 
+// to update the chart after new data is passed in
+function lineChartRender(chart, data) {
+  chart.data.datasets.pop();
+  chart.data.datasets.push(data);
+  chart.update();
+};
+
+
 // event listener for line graph timeframe links
 trafficNav.addEventListener('click', (event) => {
   trafficNavLinks.forEach( (element) => {
@@ -184,14 +192,6 @@ trafficNav.addEventListener('click', (event) => {
     }
   });
 });
-
-
-// to update the chart after new data is passed in
-function lineChartRender(chart, data) {
-  chart.data.datasets.pop();
-  chart.data.datasets.push(data);
-  chart.update();
-};
 
 
 alert.innerHTML = `
@@ -266,6 +266,12 @@ const members = [
   'Rich Dorn',
   'Greg Neal',
   'Laura Howard',
-  'Stephanie Waters'
+  'Stephanie Waters',
+  'Dawn Wood',
+  'Dan Oliver'
 ];
 
+
+$('#search-user').autocomplete({
+  source: [members]
+});
