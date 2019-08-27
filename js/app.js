@@ -1,13 +1,16 @@
 const lineChart = document.getElementById('line-chart');
 const barChart = document.getElementById('bar-chart');
 const doughnutChart = document.getElementById('doughnut-chart');
-const alert = document.getElementById('alert');
+const alertBar = document.getElementById('alert');
 const bellIcon = document.getElementById('icon-bell');
 const bellIconContainer = document.querySelector('.bell-icon-container');
 const dropdownContainer = document.querySelector('.bell-dropdown-container');
 const bellNotification = document.querySelector('.bell-notification-signal');
 const trafficNav = document.querySelector('.traffic-nav');
 const trafficNavLinks = document.querySelectorAll('.traffic-nav-link');
+const userSearch = document.getElementById('search-user');
+const userMessage = document.getElementById('user-message');
+const sendButton = document.getElementById('send-button');
 let counter = 0;
 
 const lineChartData = {
@@ -194,17 +197,17 @@ trafficNav.addEventListener('click', (event) => {
 });
 
 
-alert.innerHTML = `
+alertBar.innerHTML = `
   <div class="alert-banner">
     <p><strong>Alert:</strong> &nbsp; You have <strong>6</strong> overdue tasks to complete!</p>
     <p class="alert-banner-close">x</p>
   </div>
 `;
 
-alert.addEventListener('click', (event) => {
+alertBar.addEventListener('click', (event) => {
   const element = event.target;
   if (element.classList.contains('alert-banner-close')) {
-    alert.style.display = 'none';
+    alertBar.style.display = 'none';
   }
 });
 
@@ -275,3 +278,19 @@ const members = [
 $('#search-user').autocomplete({
   source: [members]
 });
+
+// alerts user if confirmation is sent or if fields are missing input info
+sendButton.addEventListener('click', () => {
+  if (userSearch.value === '' && userMessage.value === '') {
+    alert('Please fill out user and message fields before sending');
+  } else if (userSearch.value === '') {
+    alert('Please fill out user field before sending');
+  } else if (userMessage.value === '') {
+    alert('Please fill out message field before sending');
+  } else {
+    alert(`Message successfully sent to: ${userSearch.value}`);
+    userSearch.value = "";
+    userMessage.value = "";
+  }
+});
+
