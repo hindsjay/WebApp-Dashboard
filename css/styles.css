@@ -388,7 +388,7 @@ h1 {
 .message-search input,
 .message-text,
 .timezone {
-  background-color: rgb(248, 245, 245);
+  background-color: rgb(248, 245, 245) !important;
   display: block;
   margin: 0 auto;
 }
