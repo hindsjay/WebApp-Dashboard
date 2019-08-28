@@ -11,6 +11,9 @@ const trafficNavLinks = document.querySelectorAll('.traffic-nav-link');
 const userSearch = document.getElementById('search-user');
 const userMessage = document.getElementById('user-message');
 const sendButton = document.getElementById('send-button');
+const emailToggle = document.getElementById('toggle-email');
+const profileToggle = document.getElementById('toggle-profile');
+const timezone = document.querySelector('.timezone');
 let counter = 0;
 
 const lineChartData = {
@@ -172,6 +175,52 @@ const myDoughnutChart = new Chart(doughnutChart, {
 });
 
 
+if (localStorage.length > 0) {
+  let storageEmailValue = localStorage.getItem('Email-Notifications'); 
+  let storageProfileValue = localStorage.getItem('Profile-Public'); 
+
+  if (storageEmailValue) {
+    if (storageEmailValue === 'off') {
+      emailToggle.checked = false;
+    } else {
+      emailToggle.checked = true;
+    }
+  }
+
+  if (storageProfileValue) {
+    if (storageProfileValue === 'off') {
+      profileToggle.checked = false;
+    } else {
+      profileToggle.checked = true;
+    }
+  }
+
+  if (localStorage.getItem('Timezone')) {
+    timezone.value = localStorage.getItem('Timezone');
+  }
+}
+
+emailToggle.addEventListener('click', () => {
+  if (emailToggle.checked) {
+    localStorage.setItem('Email-Notifications', 'on'); 
+  } else {
+    localStorage.setItem('Email-Notifications', 'off'); 
+  }
+});
+
+profileToggle.addEventListener('click', () => {
+  if (profileToggle.checked) {
+    localStorage.setItem('Profile-Public', 'on'); 
+  } else {
+    localStorage.setItem('Profile-Public', 'off'); 
+  }
+});
+
+timezone.addEventListener('change', () => {
+  localStorage.setItem('Timezone', timezone.value);
+});
+
+
 // to update the chart after new data is passed in
 function lineChartRender(chart, data) {
   chart.data.datasets.pop();
@@ -211,26 +260,6 @@ alertBar.addEventListener('click', (event) => {
   }
 });
 
-// bellIcon.addEventListener('click', () => {
-//   if (dropdownContainer.style.display === '') {
-//     dropdownContainer.style.display = 'block'
-//   } else {
-//     dropdownContainer.style.display = '';
-//   }
-// });
-
-// dropdownContainer.addEventListener('click', function(event) {
-//   const element = event.target;
-//   const eventTargetPreviousElement = element.previousElementSibling;
-
-//   eventTargetPreviousElement.parentElement.style.display = 'none';
-//   counter++;
-
-//   if (counter === 2) {
-//     dropdownContainer.style.boxShadow = 'none';
-//     bellNotification.style.display = 'none';
-//   }
-// });
 
 /*
 event listener on bell icon container to handle dropdown menu and removal of dropdown menu notification
@@ -293,4 +322,3 @@ sendButton.addEventListener('click', () => {
     userMessage.value = "";
   }
 });
-
