@@ -6,6 +6,8 @@ const bellIcon = document.getElementById('icon-bell');
 const bellIconContainer = document.querySelector('.bell-icon-container');
 const dropdownContainer = document.querySelector('.bell-dropdown-container');
 const bellNotification = document.querySelector('.bell-notification-signal');
+const sidebarNav = document.querySelector('.nav-sidebar');
+const sidebarNavLinks = document.querySelectorAll('.sidebar-link');
 const trafficNav = document.querySelector('.traffic-nav');
 const trafficNavLinks = document.querySelectorAll('.traffic-nav-link');
 const userSearch = document.getElementById('search-user');
@@ -175,6 +177,7 @@ const myDoughnutChart = new Chart(doughnutChart, {
 });
 
 
+// local storage
 if (localStorage.length > 0) {
   let storageEmailValue = localStorage.getItem('Email-Notifications'); 
   let storageProfileValue = localStorage.getItem('Profile-Public'); 
@@ -227,6 +230,21 @@ function lineChartRender(chart, data) {
   chart.data.datasets.push(data);
   chart.update();
 };
+
+
+//event listener for sidebar nav links
+sidebarNav.addEventListener('click', (event) => {
+  const elementClicked = event.target;
+  if (elementClicked.parentElement.classList.contains('sidebar-link')) {
+    sidebarNavLinks.forEach( (element) => {
+      if (element.classList.contains('nav-sidebar-active')) {
+        element.classList.remove('nav-sidebar-active');
+      }
+    });
+
+    elementClicked.parentElement.classList.add('nav-sidebar-active');
+  }
+});
 
 
 // event listener for line graph timeframe links
@@ -303,7 +321,7 @@ const members = [
   'Dan Oliver'
 ];
 
-
+// initiate autocomplete jQuery plugin
 $('#search-user').autocomplete({
   source: [members]
 });
