@@ -304,7 +304,7 @@ bellIconContainer.addEventListener('click', (event) => {
 
   if (elementClicked.classList.contains('dropdown-close')) {
     const eventTargetPreviousElement = elementClicked.previousElementSibling;
-    eventTargetPreviousElement.parentElement.style.display = 'none';
+    eventTargetPreviousElement.parentElement.remove();
     counter++;
   
     if (counter === 2) {
