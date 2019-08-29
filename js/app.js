@@ -19,10 +19,17 @@ const timezone = document.querySelector('.timezone');
 let counter = 0;
 
 const lineChartData = {
-  Hourly: [990, 430, 312, 809, 272, 1009, 765, 1223, 1189, 800, 1559],
-  Daily: [750, 1233, 958, 1609, 2110, 1467, 1755, 1190, 1923, 2290, 1990],
-  Weekly: [1009, 2009, 1309, 1190, 2120, 1290, 1671, 1409, 1801, 1789, 801],
-  Monthly: [1771, 1567, 1239, 1667, 1770, 2188, 2377, 1883, 1577, 1501, 1962]
+  Hourly: [101, 82, 178, 142, 289, 377, 303, 505, 418, 465, 389, 410],
+  Daily: [750, 1233, 958, 1609, 2110, 1467, 1755],
+  Weekly: [1009, 2009, 1309, 1190, 2120, 1290, 1671, 1409, 1801, 1789, 1201],
+  Monthly: [2371, 2567, 3239, 1667, 1770, 2188, 2377, 3883, 2577, 2101, 2962, 2770]
+}
+
+const lineChartLabels = {
+  Hourly: ['8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
+  Daily: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+  Weekly: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
+  Monthly: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 }
 
 const chartDataset = [{
@@ -38,9 +45,9 @@ const chartDataset = [{
 const myLineChart = new Chart(lineChart, {
   type: 'line',
   data: {
-    labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
+    labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
     datasets: [{
-      data: [750, 1233, 958, 1609, 2110, 1467, 1755, 1190, 1923, 2290, 1990],
+      data: [750, 1233, 958, 1609, 2110, 1467, 1755],
       backgroundColor: ['rgba(133, 132, 138, .3)'],
       borderColor: ['rgba(133, 132, 138, 1)'],
       borderWidth: 1,
@@ -79,7 +86,7 @@ const myLineChart = new Chart(lineChart, {
           drawTicks: false
         },
         ticks: {
-          stepSize: 500,
+          beginAtZero: true,
           padding: 15
         }
       }]
@@ -225,8 +232,9 @@ timezone.addEventListener('change', () => {
 
 
 // to update the chart after new data is passed in
-function lineChartRender(chart, data) {
+function lineChartRender(chart, label, data) {
   chart.data.datasets.pop();
+  chart.data.labels = label;
   chart.data.datasets.push(data);
   chart.update();
 };
@@ -257,8 +265,9 @@ trafficNav.addEventListener('click', (event) => {
     if (event.target.innerHTML === element.innerHTML) {
       element.classList.add('traffic-timeframe-active');
       chartDataset[0].data = lineChartData[element.innerHTML];
+      let label = lineChartLabels[element.innerHTML];
 
-      lineChartRender(myLineChart, chartDataset[0]);
+      lineChartRender(myLineChart, label, chartDataset[0]);
     }
   });
 });
