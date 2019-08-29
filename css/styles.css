@@ -32,6 +32,7 @@ section:nth-child(-n+8) {
   border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
+
 /* 
 *************** -- Header Styles -- ***************
 */
@@ -182,6 +183,19 @@ h1 {
   padding-left: 3px;
 }
 
+.main-search input:focus,
+.message-search input:focus,
+.message-text:focus {
+  border: 2px solid lightseagreen;
+  background: rgb(253, 253, 230) !important;
+}
+
+.main-search input,
+.message-search input,
+.message-text {
+  transition: all .5s;
+}
+
 #alert {
   width: 95%;
   margin: 0 auto;
@@ -191,7 +205,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(133, 132, 138);
+  background-color: rgb(85, 122, 149);
   border-radius: 3px;
   color: white;
   font-size: .7em;
@@ -292,7 +306,7 @@ h1 {
 }
 
 .social-image {
-  background-color: rgb(133, 132, 138);
+  background-color: rgb(85, 122, 149);
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -388,7 +402,7 @@ h1 {
 .message-search input,
 .message-text,
 .timezone {
-  background-color: rgb(248, 245, 245) !important;
+  background-color: rgb(248, 245, 245);
   display: block;
   margin: 0 auto;
 }
@@ -544,7 +558,7 @@ built switch following guide from this source: https://medium.com/front-end-week
 
 .traffic-timeframe-active {
   color: white;
-  background-color: rgb(177, 162, 150);
+  background-color: rgb(85, 122, 149);
   border-radius: 40px;
 }
 
