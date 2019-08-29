@@ -1003,11 +1003,11 @@
 // 							olderBackground = $input.css('background');
 // 						}
 						
-						try{
-							$input[0].style.setProperty('background', 'transparent', 'important');
-						} catch(e) {
-							$input.css('background','transparent')
-						}
+						// try{
+						// 	$input[0].style.setProperty('background', 'transparent', 'important');
+						// } catch(e) {
+						// 	$input.css('background','transparent')
+						// }
 
 						$box
 							.append($hint);
