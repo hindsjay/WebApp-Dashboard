@@ -38,7 +38,6 @@ section:nth-child(-n+8) {
 */
 
 .header {
-  /* background-color: rgb(143, 127, 231); */
   background-color: #5D5C61;
   display: flex;
   align-items: center;
@@ -193,7 +192,7 @@ h1 {
 .main-search input,
 .message-search input,
 .message-text {
-  transition: all .5s;
+  transition: background .5s;
 }
 
 #alert {
@@ -226,7 +225,6 @@ h1 {
 .nav-sidebar {
   display: flex;
   justify-content: space-around;
-  /* background-color: rgb(109, 97, 180) */
   background-color: rgb(133, 132, 138);
   grid-area: nav;
   align-items: center;
